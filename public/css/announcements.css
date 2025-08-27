@@ -1,0 +1,108 @@
+/* お知らせ管理のカスタムスタイル */
+
+.announcement-card {
+    margin-bottom: 15px;
+    border-left: 4px solid #337ab7;
+}
+
+.announcement-card.draft {
+    border-left-color: #999;
+}
+
+.announcement-content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+.announcement-meta {
+    font-size: 12px;
+    color: #666;
+}
+
+.distribution-targets {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.user-role-badge {
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.announcement-actions {
+    margin-top: 10px;
+}
+
+.announcement-actions .btn {
+    margin-right: 5px;
+}
+
+.published-badge {
+    background-color: #5cb85c;
+}
+
+.draft-badge {
+    background-color: #999;
+}
+
+.announcement-title {
+    font-weight: bold;
+    color: #337ab7;
+    text-decoration: none;
+}
+
+.announcement-title:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+.table-announcements th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+.table-announcements tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btn-group-sm .btn {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* TinyMCE content styling */
+.announcement-content-area img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.announcement-content-area {
+    word-wrap: break-word;
+}
+
+.announcement-content-area a {
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+.announcement-content-area a:hover {
+    color: #23527c;
+}
+
+/* TinyMCE editor improvements */
+.mce-tinymce {
+    border: 1px solid #ddd !important;
+}
+
+.mce-toolbar-grp {
+    background: #f5f5f5 !important;
+}
+
+/* Upload progress styling */
+.mce-progress {
+    background-color: #337ab7 !important;
+}

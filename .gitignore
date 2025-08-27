@@ -1,0 +1,36 @@
+# Laravel 関連
+/vendor
+/node_modules
+/public/storage
+/public/build
+/public/hot
+/storage/*.key
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/data/*
+/storage/app/public/*
+!storage/app/public/.gitignore
+/bootstrap/cache/*
+!bootstrap/cache/.gitignore
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.phpunit.cache
+
+# ログファイル
+storage/logs/*
+!storage/logs/.gitignore
+
+
+# OS/エディタ 関連
+Thumbs.db
+.DS_Store
+*.swp
+*~
+.directory
+/.fleet
+/.idea
+/.vscode
+/.zed

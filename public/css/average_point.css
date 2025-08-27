@@ -1,0 +1,21 @@
+.flow {
+	display: flex;
+	list-style: none;
+}
+
+.flow_item {
+	width: 100%;
+
+}
+
+.tab-area {
+	overflow-x: scroll;
+}
+
+.tab-menu {
+	width: 63em;
+}
+
+.textbox {
+	width: 3em;
+}

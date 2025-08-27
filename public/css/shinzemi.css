@@ -1,0 +1,53 @@
+.no-spin::-webkit-inner-spin-button,
+.no-spin::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	-moz-appearance: textfield;
+}
+
+
+textarea {
+	resize: vertical;
+	height: 150px;
+	width: 100%;
+}
+
+.custom-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+}
+.brackets{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.brackets::before{
+	content: '【';
+}
+.brackets::after{
+	content: '】';
+}
+.round-brackets{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.round-brackets::before{
+	content: '（';
+}
+.round-brackets::after{
+	content: '）';
+}
+.sama-brackets{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.sama-brackets::before{
+	content: '（';
+}
+.sama-brackets::after{
+	content: '様）';
+}

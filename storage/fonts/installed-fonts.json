@@ -1,0 +1,10 @@
+{
+    "migmix": {
+        "normal": "\/var\/www\/html\/shinzemi\/storage\/fonts\/migmix_normal_58d658b60aae13b6262544f4c82556bd",
+        "bold": "migmix_bold_439c40b218de046c2d33aeb905626bef"
+    },
+    "noto sans jp": {
+        "normal": "\/var\/www\/html\/storage\/fonts\/noto_sans_jp_normal_a45f7cd40090489787a376a77c13988f",
+        "bold": "noto_sans_jp_bold_b20f87efdeef381fc4f05109253a8a5e"
+    }
+}
