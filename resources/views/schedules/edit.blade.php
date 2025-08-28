@@ -2,6 +2,10 @@
 
 @section('title', '予定編集')
 
+@push('css')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -9,13 +13,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="d-flex justify-content-between align-items-center" style="display: flex; justify-content: space-between; align-items: center;">
-                        <span><i class="fas fa-calendar-edit"></i> 予定編集</span>
+                        <span><i class="fa fa-calendar-edit"></i> 予定編集</span>
                         <div>
                             <a href="{{ route('schedules.index') }}" class="btn btn-secondary btn-sm">
-                                <i class="fas fa-arrow-left"></i> 戻る
+                                <i class="fa fa-arrow-left"></i> 戻る
                             </a>
                             <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal">
-                                <i class="fas fa-trash"></i> 削除
+                                <i class="fa fa-trash"></i> 削除
                             </button>
                         </div>
                     </div>
@@ -24,7 +28,7 @@
                 <div class="panel-body">
                     @if($schedule->status !== 'pending')
                         <div class="alert alert-warning">
-                            <i class="fas fa-exclamation-triangle"></i>
+                            <i class="fa fa-exclamation-triangle"></i>
                             この予定は{{ $schedule->status_display }}です。編集すると再度承認が必要になります。
                         </div>
                     @endif
@@ -147,7 +151,7 @@
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2">
                                 <div class="alert alert-warning">
-                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <i class="fa fa-exclamation-triangle"></i>
                                     編集された予定は再度承認が必要です。承認後にカレンダーに表示されます。
                                 </div>
                             </div>
@@ -156,7 +160,7 @@
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2 text-center">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> 更新
+                                    <i class="fa fa-save"></i> 更新
                                 </button>
                                 <a href="{{ route('schedules.index') }}" class="btn btn-secondary" style="margin-left: 10px;">
                                     キャンセル

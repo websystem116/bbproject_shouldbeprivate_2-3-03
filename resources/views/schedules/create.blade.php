@@ -6,6 +6,7 @@
 <!-- Select2 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endpush
 
 @push('scripts')
@@ -21,9 +22,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="d-flex justify-content-between align-items-center" style="display: flex; justify-content: space-between; align-items: center;">
-                        <span><i class="fas fa-calendar-plus"></i> 予定登録</span>
+                        <span><i class="fa fa-calendar-plus"></i> 予定登録</span>
                         <a href="{{ route('schedules.index') }}" class="btn btn-secondary btn-sm">
-                            <i class="fas fa-arrow-left"></i> 戻る
+                            <i class="fa fa-arrow-left"></i> 戻る
                         </a>
                     </div>
                 </div>
@@ -106,7 +107,7 @@
                                         <input id="schedule_date_1" type="date" class="form-control date-input @error('schedule_dates') is-invalid @enderror" 
                                                name="schedule_dates[]" value="{{ old('schedule_dates.0', $selectedDate) }}" required>
                                         <button type="button" class="btn btn-success btn-sm add-date-btn" title="日付を追加">
-                                            <i class="fas fa-plus"></i>
+                                            <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -163,7 +164,7 @@
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2">
                                 <div class="alert alert-info">
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fa fa-info-circle"></i>
                                     登録された予定は承認者による承認が必要です。承認後にカレンダーに表示されます。
                                 </div>
                             </div>
@@ -172,7 +173,7 @@
                         <div class="form-group row">
                             <div class="col-md-8 offset-md-2 text-center">
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-save"></i> 登録
+                                    <i class="fa fa-save"></i> 登録
                                 </button>
                                 <a href="{{ route('schedules.index') }}" class="btn btn-secondary" style="margin-left: 10px;">
                                     キャンセル
@@ -484,7 +485,7 @@ function addDateRow() {
     var dateRowHtml = '<div class="single-date-row">' +
         '<input type="date" class="form-control date-input" name="schedule_dates[]" required min="' + today + '">' +
         '<button type="button" class="btn btn-danger btn-sm remove-date-btn" title="日付を削除">' +
-        '<i class="fas fa-minus"></i>' +
+        '<i class="fa fa-minus"></i>' +
         '</button>' +
         '</div>';
     

@@ -6,6 +6,7 @@
 <!-- Select2 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @endpush
 
 @push('scripts')
@@ -20,7 +21,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <span><i class="fas fa-calendar"></i> スケジュール管理</span>
+                    <span><i class="fa fa-calendar"></i> スケジュール管理</span>
                 </div>
 
                 <div class="panel-body">
@@ -30,23 +31,23 @@
                             <div class="action-buttons">
                                 @if(Auth::user()->roles == 1 || Auth::user()->roles == 2)
                                 <button type="button" class="btn btn-warning" id="approvalToggleBtn">
-                                    <i class="fas fa-eye-slash"></i> 承認待ち一覧
+                                    <i class="fa fa-eye-slash"></i> 承認待ち一覧
                                     <span class="badge">{{ $pendingSchedules->count() ?? 0 }}</span>
                                 </button>
                                 @endif
                                 
                                 @if(Auth::user()->roles == 1)
                                 <a href="{{ route('schedule_approvers.index') }}" class="btn btn-info">
-                                    <i class="fas fa-users"></i> 承認者管理
+                                    <i class="fa fa-users"></i> 承認者管理
                                 </a>
                                 @endif
                                 
                                 <a href="{{ route('schedules.create', ['date' => now()->format('Y-m-d'), 'school_building_id' => $schoolBuildingId]) }}" class="btn btn-primary">
-                                    <i class="fas fa-plus"></i> 新規登録
+                                    <i class="fa fa-plus"></i> 新規登録
                                 </a>
                                 
                                 <a href="{{ route('schedules.history') }}" class="btn btn-secondary">
-                                    <i class="fas fa-history"></i> 履歴
+                                    <i class="fa fa-history"></i> 履歴
                                 </a>
                             </div>
                         </div>
@@ -55,7 +56,7 @@
                     <div id="approvalSection" style="display: none;">
                         <div class="panel panel-warning" style="margin-bottom: 20px;">
                             <div class="panel-heading">
-                                <h4><i class="fas fa-check-circle"></i> スケジュール承認</h4>
+                                <h4><i class="fa fa-check-circle"></i> スケジュール承認</h4>
                             </div>
                             <div class="panel-body">
                                 @if(isset($pendingSchedules) && $pendingSchedules->count() > 0)
@@ -64,10 +65,10 @@
                                             一括選択
                                         </button>
                                         <button type="button" class="btn btn-success btn-sm" id="bulkApproveBtn" style="margin-left: 10px;">
-                                            <i class="fas fa-check"></i> 一括承認
+                                            <i class="fa fa-check"></i> 一括承認
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm" id="bulkRejectBtn" style="margin-left: 10px;">
-                                            <i class="fas fa-times"></i> 一括却下
+                                            <i class="fa fa-times"></i> 一括却下
                                         </button>
                                     </div>
 
@@ -109,13 +110,13 @@
                                                             <td>{{ $schedule->created_at->format('Y/m/d H:i') }}</td>
                                                             <td>
                                                                 <button type="button" class="btn btn-sm btn-info" onclick="toggleDetails({{ $schedule->id }})">
-                                                                    <i class="fas fa-eye"></i> 詳細
+                                                                    <i class="fa fa-eye"></i> 詳細
                                                                 </button>
                                                                 <button type="button" class="btn btn-sm btn-success" onclick="approveSchedule({{ $schedule->id }})">
-                                                                    <i class="fas fa-check"></i> 承認
+                                                                    <i class="fa fa-check"></i> 承認
                                                                 </button>
                                                                 <button type="button" class="btn btn-sm btn-danger" onclick="rejectScheduleWithPrompt({{ $schedule->id }})">
-                                                                    <i class="fas fa-times"></i> 却下
+                                                                    <i class="fa fa-times"></i> 却下
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -179,10 +180,10 @@
                                                                         <div class="row">
                                                                             <div class="col-md-12 text-center">
                                                                                 <button type="button" class="btn btn-success" onclick="approveSchedule({{ $schedule->id }})">
-                                                                                    <i class="fas fa-check"></i> 承認
+                                                                                    <i class="fa fa-check"></i> 承認
                                                                                 </button>
                                                                                 <button type="button" class="btn btn-danger" onclick="rejectScheduleWithPrompt({{ $schedule->id }})" style="margin-left: 10px;">
-                                                                                    <i class="fas fa-times"></i> 却下
+                                                                                    <i class="fa fa-times"></i> 却下
                                                                                 </button>
                                                                             </div>
                                                                         </div>
@@ -197,7 +198,7 @@
                                     </form>
                                 @else
                                     <div class="alert alert-info text-center">
-                                        <i class="fas fa-info-circle"></i>
+                                        <i class="fa fa-info-circle"></i>
                                         承認待ちのスケジュールはありません。
                                     </div>
                                 @endif
@@ -209,16 +210,16 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="d-flex justify-content-between align-items-center" style="display: flex; justify-content: space-between; align-items: center;">
-                                <span><i class="fas fa-calendar-alt"></i> {{ $year }}年 {{ $month }}月 カレンダー</span>
+                                <span><i class="fa fa-calendar-alt"></i> {{ $year }}年 {{ $month }}月 カレンダー</span>
                                 <div class="month-navigation">
                                     <a href="{{ route('schedules.index', ['year' => $month == 1 ? $year - 1 : $year, 'month' => $month == 1 ? 12 : $month - 1, 'school_building_id' => $schoolBuildingId]) }}" class="btn btn-default btn-sm">
-                                        <i class="fas fa-chevron-left"></i> 前月
+                                        <i class="fa fa-chevron-left"></i> 前月
                                     </a>
                                     <a href="{{ route('schedules.index', ['year' => now()->year, 'month' => now()->month, 'school_building_id' => $schoolBuildingId]) }}" class="btn btn-info btn-sm" style="margin: 0 5px;">
                                         当月
                                     </a>
                                     <a href="{{ route('schedules.index', ['year' => $month == 12 ? $year + 1 : $year, 'month' => $month == 12 ? 1 : $month + 1, 'school_building_id' => $schoolBuildingId]) }}" class="btn btn-default btn-sm">
-                                        翌月 <i class="fas fa-chevron-right"></i>
+                                        翌月 <i class="fa fa-chevron-right"></i>
                                     </a>
                                 </div>
                             </div>
@@ -305,11 +306,6 @@
                                                                         <div class="holiday-name">{{ Str::limit($holidayName, 8) }}</div>
                                                                     @endif
                                                                 </div>
-                                                                @if($isCurrentMonth)
-                                                                    <span class="add-schedule-icon" title="予定追加">
-                                                                        <i class="fas fa-plus-circle"></i>
-                                                                    </span>
-                                                                @endif
                                                             </div>
                                                             
                                                             <div class="schedule-list">
@@ -321,7 +317,7 @@
                                                                         color: {{ $schedule->color_info['text'] }};"
                                                                  onclick="event.stopPropagation(); showEventEditModal({{ $schedule->id }}, '{{ addslashes($schedule->title) }}', '{{ addslashes(str_replace(["\r\n", "\r", "\n"], '\\n', $schedule->content ?? '')) }}', '{{ $schedule->schedule_date->format('Y-m-d') }}', '{{ $schedule->start_time }}', '{{ $schedule->end_time }}', {{ $schedule->school_building_id }}, '{{ addslashes($schedule->schoolBuilding->name ?? '') }}', '{{ $schedule->color }}');"> 
                                                                 <span class="event-indicator">
-                                                                <i class="fas fa-circle event-dot" style="color: {{ $schedule->color_info['border'] }};"></i>
+                                                                <i class="fa fa-circle event-dot" style="color: {{ $schedule->color_info['border'] }};"></i>
                                                                 </span>
                                                                     <span class="event-title">{{ Str::limit($schedule->title, 15) }}</span>
                                                                         @if($schedule->start_time)
@@ -417,7 +413,7 @@
                                 <input id="modal_schedule_date" type="date" class="form-control date-input" 
                                        name="schedule_dates[]" required readonly>
                                 <button type="button" class="btn btn-success btn-sm add-date-btn" title="日付を追加">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
@@ -448,14 +444,14 @@
                     </div>
 
                     <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                        <i class="fa fa-info-circle"></i>
                         登録された予定は承認者による承認が必要です。承認後にカレンダーに表示されます。
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> 登録
+                        <i class="fa fa-save"></i> 登録
                     </button>
                 </div>
             </form>
@@ -607,7 +603,7 @@
                                 <input id="edit_schedule_date" type="date" class="form-control date-input" 
                                        name="schedule_dates[]" required>
                                 <button type="button" class="btn btn-success btn-sm add-date-btn-edit" title="日付を追加">
-                                    <i class="fas fa-plus"></i>
+                                    <i class="fa fa-plus"></i>
                                 </button>
                             </div>
                         </div>
@@ -640,10 +636,10 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
                     <button type="button" class="btn btn-danger" id="deleteEventBtn">
-                        <i class="fas fa-trash"></i> 削除
+                        <i class="fa fa-trash"></i> 削除
                     </button>
                     <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> 更新
+                        <i class="fa fa-save"></i> 更新
                     </button>
                 </div>
             </form>
@@ -1171,6 +1167,7 @@
 }
 
 .event-indicator {
+    display: flex;
     margin-right: 4px;
 }
 
@@ -1348,9 +1345,9 @@ $(document).ready(function() {
         
         // Update button text and icon
         if ($('#approvalSection').is(':visible')) {
-            $(this).html('<i class="fas fa-eye-slash"></i> 承認待ち一覧 <span class="badge">{{ $pendingSchedules->count() ?? 0 }}</span>');
+            $(this).html('<i class="fa fa-eye-slash"></i> 承認待ち一覧 <span class="badge">{{ $pendingSchedules->count() ?? 0 }}</span>');
         } else {
-            $(this).html('<i class="fas fa-eye"></i> 承認待ち一覧を表示 <span class="badge">{{ $pendingSchedules->count() ?? 0 }}</span>');
+            $(this).html('<i class="fa fa-eye"></i> 承認待ち一覧を表示 <span class="badge">{{ $pendingSchedules->count() ?? 0 }}</span>');
         }
     });
     
@@ -1843,7 +1840,7 @@ function addDateRow(containerSelector) {
     var dateRowHtml = '<div class="single-date-row">' +
         '<input type="date" class="form-control date-input" name="schedule_dates[]" required>' +
         '<button type="button" class="btn btn-danger btn-sm remove-date-btn" title="日付を削除">' +
-        '<i class="fas fa-minus"></i>' +
+        '<i class="fa fa-minus"></i>' +
         '</button>' +
         '</div>';
     
